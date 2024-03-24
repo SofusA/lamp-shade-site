@@ -1,0 +1,8 @@
+[tasks.serve]
+script = "live-server src -p 3000"
+
+[tasks.tailwind-build]
+script="tailwindcss -i tailwind.css -o src/styles.css --minify"
+
+[tasks.tailwind-watch]
+script="tailwindcss -i tailwind.css -o src/styles.css --watch"
