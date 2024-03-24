@@ -6,3 +6,6 @@ script="tailwindcss -i tailwind.css -o src/styles.css --minify"
 
 [tasks.tailwind-watch]
 script="tailwindcss -i tailwind.css -o src/styles.css --watch"
+
+[tasks.compress]
+script="mogrify -path 'src/assets/' -quality 85% -resize 1200x1200 assets/*.jpg"
