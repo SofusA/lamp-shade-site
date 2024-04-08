@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Addington Design</title>
+    <link rel="stylesheet" href="/styles.css?v=2" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/htmx.org@1.9"></script>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-lvh flex flex-col justify-between"
+  >
+    <header
+      hx-get="/components/header.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></header>
+
+    <div id="content" hx-get="/pages/o30.html" hx-trigger="load"></div>
+
+    <footer
+      hx-get="/components/footer.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></footer>
+  </body>
+</html>

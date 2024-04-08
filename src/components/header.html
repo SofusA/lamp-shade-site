@@ -4,13 +4,17 @@
   <div
     class="max-w-screen-xl flex flex-grow flex-wrap items-center justify-between p-4"
   >
-    <button hx-get="/pages/home.html" hx-target="#content" hx-push-url="/">
-      <span class="text-2xl font-semibold whitespace-nowrap"
-        >Addington Design</span
-      >
-    </button>
-    <button
-      type="button"
+    <a
+      hx-get="/pages/home.html"
+      hx-target="#content"
+      hx-push-url="/"
+      class="cursor-pointer"
+    >
+      <span class="text-2xl font-semibold whitespace-nowrap">
+        Addington Design
+      </span>
+    </a>
+    <a
       id="navbar-content-toggle"
       onclick="toggle()"
       class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -33,52 +37,55 @@
           d="M1 1h15M1 7h15M1 13h15"
         />
       </svg>
-    </button>
+    </a>
     <div class="hidden w-full md:block md:w-auto" id="navbar-content">
       <ul class="flex flex-col md:flex-row md:gap-4 gap-0">
         <li>
-          <button
+          <a
             hx-get="/pages/home.html"
             hx-target="#content"
             hx-push-url="/"
             aria-current="page"
             onclick="hideContent()"
+            class="cursor-pointer"
           >
             Hjem
-          </button>
+          </a>
         </li>
         <li>
-          <button
+          <a
             hx-get="/pages/about.html"
             hx-target="#content"
             hx-push-url="/about"
             onclick="hideContent()"
+            class="cursor-pointer"
           >
             Om os
-          </button>
+          </a>
         </li>
         <li>
-          <button
+          <a
             hx-get="/pages/contact.html"
             hx-target="#content"
             hx-push-url="/contact"
             onclick="hideContent()"
+            class="cursor-pointer"
           >
             Kontakt
-          </button>
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <script>
-  function toggle() {
+  const toggle = () => {
     const contentElement = document.getElementById("navbar-content");
     contentElement.classList.toggle("hidden");
-  }
+  };
 
-  function hideContent() {
+  const hideContent = () => {
     const contentElement = document.getElementById("navbar-content");
     contentElement.classList.add("hidden");
-  }
+  };
 </script>
